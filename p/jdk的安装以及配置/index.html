@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="A brief guide to setup KaTeX">
-<title>Math Typesetting</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装 JDK（Java Development Kit）并配置环境变量是学习 Java 编程的第一步。以下是详细步骤，适用于 Windows 和 Mac/Linux 系统：\nWindows 系统 1. 下载 JDK 前往 Oracle 官方网站或 OpenJDK 官网： Oracle JDK：https://www.oracle.com/java/technologies/javase-downloads.html OpenJDK：https://openjdk.org/ 下载适合你的系统（Windows x64）的 JDK 安装包。 2. 安装 JDK 双击下载的安装包，启动安装程序。 按照提示进行安装： 选择安装路径（例如 C:\\Program Files\\Java\\jdk-XX.X.X）。 安装完成后记住安装路径。 3. 配置环境变量 打开环境变量设置： 右键“此电脑”或“我的电脑”，选择“属性”。 点击“高级系统设置”。 在“系统属性”窗口中，选择“高级”选项卡，点击“环境变量”。 设置 JAVA_HOME： 点击“系统变量”下的“新建”按钮。 变量名：JAVA_HOME 变量值：输入 JDK 的安装路径，例如 C:\\Program Files\\Java\\jdk-XX.X.X 配置 PATH 变量： 在“系统变量”中找到 Path，点击“编辑”。 新增一行，输入 %JAVA_HOME%\\bin 配置 CLASSPATH（可选）： 点击“新建”变量。 变量名：CLASSPATH 变量值：.:%JAVA_HOME%\\lib\\tools.jar;%JAVA_HOME%\\lib\\dt.jar （注意：路径分隔符 ;） 4. 验证安装 打开命令提示符（Win + R，输入 cmd）。 输入以下命令： 检查 Java 版本：java -version 检查编译器版本：javac -version 如果显示 JDK 版本信息，说明安装和配置成功。\n">
+<title>JDK的安装以及配置</title>
 
-<link rel='canonical' href='https://LeoLuosifen.github.io/p/math-typesetting/'>
+<link rel='canonical' href='https://LeoLuosifen.github.io/p/jdk%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Math Typesetting">
-<meta property='og:description' content="A brief guide to setup KaTeX">
-<meta property='og:url' content='https://LeoLuosifen.github.io/p/math-typesetting/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="JDK的安装以及配置">
+<meta property='og:description' content="安装 JDK（Java Development Kit）并配置环境变量是学习 Java 编程的第一步。以下是详细步骤，适用于 Windows 和 Mac/Linux 系统：\nWindows 系统 1. 下载 JDK 前往 Oracle 官方网站或 OpenJDK 官网： Oracle JDK：https://www.oracle.com/java/technologies/javase-downloads.html OpenJDK：https://openjdk.org/ 下载适合你的系统（Windows x64）的 JDK 安装包。 2. 安装 JDK 双击下载的安装包，启动安装程序。 按照提示进行安装： 选择安装路径（例如 C:\\Program Files\\Java\\jdk-XX.X.X）。 安装完成后记住安装路径。 3. 配置环境变量 打开环境变量设置： 右键“此电脑”或“我的电脑”，选择“属性”。 点击“高级系统设置”。 在“系统属性”窗口中，选择“高级”选项卡，点击“环境变量”。 设置 JAVA_HOME： 点击“系统变量”下的“新建”按钮。 变量名：JAVA_HOME 变量值：输入 JDK 的安装路径，例如 C:\\Program Files\\Java\\jdk-XX.X.X 配置 PATH 变量： 在“系统变量”中找到 Path，点击“编辑”。 新增一行，输入 %JAVA_HOME%\\bin 配置 CLASSPATH（可选）： 点击“新建”变量。 变量名：CLASSPATH 变量值：.:%JAVA_HOME%\\lib\\tools.jar;%JAVA_HOME%\\lib\\dt.jar （注意：路径分隔符 ;） 4. 验证安装 打开命令提示符（Win + R，输入 cmd）。 输入以下命令： 检查 Java 版本：java -version 检查编译器版本：javac -version 如果显示 JDK 版本信息，说明安装和配置成功。\n">
+<meta property='og:url' content='https://LeoLuosifen.github.io/p/jdk%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE/'>
 <meta property='og:site_name' content='Leo的博客 | 技术与生活'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2019-03-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2019-03-08T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Math Typesetting">
-<meta name="twitter:description" content="A brief guide to setup KaTeX">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-28T15:44:35&#43;11:00'/><meta property='article:modified_time' content='2024-11-28T15:44:35&#43;11:00'/>
+<meta name="twitter:title" content="JDK的安装以及配置">
+<meta name="twitter:description" content="安装 JDK（Java Development Kit）并配置环境变量是学习 Java 编程的第一步。以下是详细步骤，适用于 Windows 和 Mac/Linux 系统：\nWindows 系统 1. 下载 JDK 前往 Oracle 官方网站或 OpenJDK 官网： Oracle JDK：https://www.oracle.com/java/technologies/javase-downloads.html OpenJDK：https://openjdk.org/ 下载适合你的系统（Windows x64）的 JDK 安装包。 2. 安装 JDK 双击下载的安装包，启动安装程序。 按照提示进行安装： 选择安装路径（例如 C:\\Program Files\\Java\\jdk-XX.X.X）。 安装完成后记住安装路径。 3. 配置环境变量 打开环境变量设置： 右键“此电脑”或“我的电脑”，选择“属性”。 点击“高级系统设置”。 在“系统属性”窗口中，选择“高级”选项卡，点击“环境变量”。 设置 JAVA_HOME： 点击“系统变量”下的“新建”按钮。 变量名：JAVA_HOME 变量值：输入 JDK 的安装路径，例如 C:\\Program Files\\Java\\jdk-XX.X.X 配置 PATH 变量： 在“系统变量”中找到 Path，点击“编辑”。 新增一行，输入 %JAVA_HOME%\\bin 配置 CLASSPATH（可选）： 点击“新建”变量。 变量名：CLASSPATH 变量值：.:%JAVA_HOME%\\lib\\tools.jar;%JAVA_HOME%\\lib\\dt.jar （注意：路径分隔符 ;） 4. 验证安装 打开命令提示符（Win + R，输入 cmd）。 输入以下命令： 检查 Java 版本：java -version 检查编译器版本：javac -version 如果显示 JDK 版本信息，说明安装和配置成功。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -352,9 +352,30 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
+    <li><a href="#windows-系统"><strong>Windows 系统</strong></a>
       <ol>
-        <li><a href="#examples">Examples</a></li>
+        <li><a href="#1-下载-jdk"><strong>1. 下载 JDK</strong></a></li>
+        <li><a href="#2-安装-jdk"><strong>2. 安装 JDK</strong></a></li>
+        <li><a href="#3-配置环境变量"><strong>3. 配置环境变量</strong></a></li>
+        <li><a href="#4-验证安装"><strong>4. 验证安装</strong></a></li>
+      </ol>
+    </li>
+    <li><a href="#maclinux-系统"><strong>Mac/Linux 系统</strong></a>
+      <ol>
+        <li><a href="#1-使用包管理器安装-jdk推荐"><strong>1. 使用包管理器安装 JDK（推荐）</strong></a>
+          <ol>
+            <li><a href="#mac"><strong>Mac：</strong></a></li>
+            <li><a href="#linux"><strong>Linux：</strong></a></li>
+          </ol>
+        </li>
+        <li><a href="#2-手动下载与安装"><strong>2. 手动下载与安装</strong></a></li>
+        <li><a href="#3-配置环境变量-1"><strong>3. 配置环境变量</strong></a>
+          <ol>
+            <li><a href="#mac-1"><strong>Mac：</strong></a></li>
+            <li><a href="#linux-1"><strong>Linux：</strong></a></li>
+          </ol>
+        </li>
+        <li><a href="#4-验证安装-1"><strong>4. 验证安装</strong></a></li>
       </ol>
     </li>
   </ol>
@@ -376,13 +397,9 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/math-typesetting/">Math Typesetting</a>
+            <a href="/p/jdk%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE/">JDK的安装以及配置</a>
         </h2>
     
-        
-        <h3 class="article-subtitle">
-            A brief guide to setup KaTeX
-        </h3>
         
     </div>
 
@@ -402,7 +419,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2019-03-08</time>
+                <time class="article-time--published">2024-11-28</time>
             </div>
         
 
@@ -417,13 +434,32 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
     </footer>
     
 
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://LeoLuosifen.github.io/en/p/jdk-installation-and-configuration/" class="link">English</a>
+                
+            </div>
+        </footer>
     
 </div>
 
@@ -432,39 +468,258 @@
     <section class="article-content">
     
     
-    <p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p>
-<p>In this example we will be using <a class="link" href="https://katex.org/"  target="_blank" rel="noopener"
-    >KaTeX</a></p>
+    <p>安装 JDK（Java Development Kit）并配置环境变量是学习 Java 编程的第一步。以下是详细步骤，适用于 <strong>Windows</strong> 和 <strong>Mac/Linux</strong> 系统：</p>
+<h2 id="windows-系统"><strong>Windows 系统</strong>
+</h2><h3 id="1-下载-jdk"><strong>1. 下载 JDK</strong>
+</h3><ol>
+<li>前往 Oracle 官方网站或 OpenJDK 官网：
 <ul>
-<li>Create a partial under <code>/layouts/partials/math.html</code></li>
-<li>Within this partial reference the <a class="link" href="https://katex.org/docs/autorender.html"  target="_blank" rel="noopener"
-    >Auto-render Extension</a> or host these scripts locally.</li>
-<li>Include the partial in your templates like so:</li>
+<li>Oracle JDK：https://www.oracle.com/java/technologies/javase-downloads.html</li>
+<li>OpenJDK：https://openjdk.org/</li>
 </ul>
+</li>
+<li>下载适合你的系统（Windows x64）的 JDK 安装包。</li>
+</ol>
+<h3 id="2-安装-jdk"><strong>2. 安装 JDK</strong>
+</h3><ol>
+<li>双击下载的安装包，启动安装程序。</li>
+<li>按照提示进行安装：
+<ul>
+<li><strong>选择安装路径</strong>（例如 <code>C:\Program Files\Java\jdk-XX.X.X</code>）。</li>
+<li>安装完成后记住安装路径。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-配置环境变量"><strong>3. 配置环境变量</strong>
+</h3><ol>
+<li><strong>打开环境变量设置</strong>：
+<ul>
+<li>右键“此电脑”或“我的电脑”，选择“属性”。</li>
+<li>点击“高级系统设置”。</li>
+<li>在“系统属性”窗口中，选择“高级”选项卡，点击“环境变量”。</li>
+</ul>
+</li>
+<li><strong>设置 <code>JAVA_HOME</code></strong>：
+<ul>
+<li>点击“系统变量”下的“新建”按钮。</li>
+<li>变量名：<code>JAVA_HOME</code></li>
+<li>变量值：输入 JDK 的安装路径，例如 <code>C:\Program Files\Java\jdk-XX.X.X</code></li>
+</ul>
+</li>
+<li><strong>配置 <code>PATH</code> 变量</strong>：
+<ul>
+<li>在“系统变量”中找到 <code>Path</code>，点击“编辑”。</li>
+<li>新增一行，输入 <code>%JAVA_HOME%\bin</code></li>
+</ul>
+</li>
+<li><strong>配置 <code>CLASSPATH</code>（可选）</strong>：
+<ul>
+<li>点击“新建”变量。</li>
+<li>变量名：<code>CLASSPATH</code></li>
+<li>变量值：<code>.:%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar</code>
+（注意：路径分隔符 <code>;</code>）</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-验证安装"><strong>4. 验证安装</strong>
+</h3><ol>
+<li>打开命令提示符（<code>Win + R</code>，输入 <code>cmd</code>）。</li>
+<li>输入以下命令：
+<ul>
+<li>检查 Java 版本：<code>java -version</code></li>
+<li>检查编译器版本：<code>javac -version</code></li>
+</ul>
+</li>
+</ol>
+<p>如果显示 JDK 版本信息，说明安装和配置成功。</p>
+<h2 id="maclinux-系统"><strong>Mac/Linux 系统</strong>
+</h2><h3 id="1-使用包管理器安装-jdk推荐"><strong>1. 使用包管理器安装 JDK（推荐）</strong>
+</h3><h4 id="mac"><strong>Mac：</strong>
+</h4><ol>
+<li>
+<p>打开终端，运行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install openjdk
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查看安装路径：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/usr/libexec/java_home
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="linux"><strong>Linux：</strong>
+</h4><ol>
+<li>
+<p>使用包管理器安装：</p>
+<ul>
+<li>
+<p>Ubuntu/Debian：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{{</span> <span class="k">if</span> or .Params.math .Site.Params.math <span class="o">}}</span>
-</span></span><span class="line"><span class="cl"><span class="o">{{</span> partial <span class="s2">&#34;math.html&#34;</span> . <span class="o">}}</span>
-</span></span><span class="line"><span class="cl"><span class="o">{{</span> end <span class="o">}}</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install openjdk-XX-jdk
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>To enable KaTeX globally set the parameter <code>math</code> to <code>true</code> in a project&rsquo;s configuration</li>
-<li>To enable KaTeX on a per page basis include the parameter <code>math: true</code> in content files</li>
+</div></li>
+<li>
+<p>CentOS/RHEL：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo yum install java-XX-openjdk-devel
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
-<p><strong>Note:</strong> Use the online reference of <a class="link" href="https://katex.org/docs/supported.html"  target="_blank" rel="noopener"
-    >Supported TeX Functions</a></p>
+</li>
+<li>
+<p>验证安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -version
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<hr>
+<h3 id="2-手动下载与安装"><strong>2. 手动下载与安装</strong>
+</h3><ol>
+<li>
+<p>前往 Oracle 或 OpenJDK 网站，下载对应的 JDK 安装包（如 <code>.dmg</code>、<code>.tar.gz</code>）。</p>
+</li>
+<li>
+<p>解压（Linux）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -xvf jdk-XX.X.X.tar.gz
+</span></span><span class="line"><span class="cl">sudo mv jdk-XX.X.X /usr/lib/jvm
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<hr>
+<h3 id="3-配置环境变量-1"><strong>3. 配置环境变量</strong>
+</h3><h4 id="mac-1"><strong>Mac：</strong>
+</h4><ol>
+<li>
+<p>打开 <code>~/.zshrc</code> 或 <code>~/.bash_profile</code> 文件。</p>
+</li>
+<li>
+<p>添加以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>保存并刷新终端配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="linux-1"><strong>Linux：</strong>
+</h4><ol>
+<li>
+<p>编辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~/.bashrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~/.bash_profile
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-XX.X.X
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>保存并生效：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<hr>
+<h3 id="4-验证安装-1"><strong>4. 验证安装</strong>
+</h3><ol>
+<li>
+<p>运行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -version
+</span></span><span class="line"><span class="cl">javac -version
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>如果能正确显示版本信息，说明安装成功。</p>
+</li>
+</ol>
 
-<h3 id="examples">Examples
-</h3><p>Inline math: $\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$</p>
-$$
- \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } 
-$$
 </section>
 
 
@@ -474,30 +729,6 @@ $$
     </footer>
 
 
-    
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
     
 </article>
 
