@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
-<title>Markdown Syntax Guide</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="如何下载配置JDK">
+<title>JDK</title>
 
-<link rel='canonical' href='https://LeoLuosifen.github.io/p/markdown-syntax-guide/'>
+<link rel='canonical' href='https://LeoLuosifen.github.io/p/jdk/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Markdown Syntax Guide">
-<meta property='og:description' content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
-<meta property='og:url' content='https://LeoLuosifen.github.io/p/markdown-syntax-guide/'>
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="JDK">
+<meta property='og:description' content="如何下载配置JDK">
+<meta property='og:url' content='https://LeoLuosifen.github.io/p/jdk/'>
 <meta property='og:site_name' content='Leo的博客 | 技术与生活'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='markdown' /><meta property='article:tag' content='css' /><meta property='article:tag' content='html' /><meta property='article:tag' content='themes' /><meta property='article:published_time' content='2019-03-11T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2019-03-11T00:00:00&#43;00:00'/><meta property='og:image' content='https://LeoLuosifen.github.io/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg' />
-<meta name="twitter:title" content="Markdown Syntax Guide">
-<meta name="twitter:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://LeoLuosifen.github.io/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-28T15:44:35&#43;11:00'/><meta property='article:modified_time' content='2024-11-28T15:44:35&#43;11:00'/>
+<meta name="twitter:title" content="JDK">
+<meta name="twitter:description" content="如何下载配置JDK">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -330,64 +329,32 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#headings">Headings</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#h2">H2</a>
+    <li><a href="#windows-系统"><strong>Windows 系统</strong></a>
       <ol>
-        <li><a href="#h3">H3</a>
-          <ol>
-            <li><a href="#h4">H4</a></li>
-          </ol>
-        </li>
+        <li><a href="#1-下载-jdk"><strong>1. 下载 JDK</strong></a></li>
+        <li><a href="#2-安装-jdk"><strong>2. 安装 JDK</strong></a></li>
+        <li><a href="#3-配置环境变量"><strong>3. 配置环境变量</strong></a></li>
+        <li><a href="#4-验证安装"><strong>4. 验证安装</strong></a></li>
       </ol>
     </li>
-    <li><a href="#paragraph">Paragraph</a></li>
-    <li><a href="#blockquotes">Blockquotes</a>
+    <li><a href="#maclinux-系统"><strong>Mac/Linux 系统</strong></a>
       <ol>
-        <li>
+        <li><a href="#1-使用包管理器安装-jdk推荐"><strong>1. 使用包管理器安装 JDK（推荐）</strong></a>
           <ol>
-            <li><a href="#blockquote-without-attribution">Blockquote without attribution</a></li>
-            <li><a href="#blockquote-with-attribution">Blockquote with attribution</a></li>
+            <li><a href="#mac"><strong>Mac：</strong></a></li>
+            <li><a href="#linux"><strong>Linux：</strong></a></li>
           </ol>
         </li>
-      </ol>
-    </li>
-    <li><a href="#tables">Tables</a>
-      <ol>
-        <li>
+        <li><a href="#2-手动下载与安装"><strong>2. 手动下载与安装</strong></a></li>
+        <li><a href="#3-配置环境变量-1"><strong>3. 配置环境变量</strong></a>
           <ol>
-            <li><a href="#inline-markdown-within-tables">Inline Markdown within tables</a></li>
+            <li><a href="#mac-1"><strong>Mac：</strong></a></li>
+            <li><a href="#linux-1"><strong>Linux：</strong></a></li>
           </ol>
         </li>
+        <li><a href="#4-验证安装-1"><strong>4. 验证安装</strong></a></li>
       </ol>
     </li>
-    <li><a href="#code-blocks">Code Blocks</a>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#code-block-with-backticks">Code block with backticks</a></li>
-            <li><a href="#code-block-indented-with-four-spaces">Code block indented with four spaces</a></li>
-            <li><a href="#code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo&rsquo;s internal highlight shortcode</a></li>
-            <li><a href="#diff-code-block">Diff code block</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#list-types">List Types</a>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#ordered-list">Ordered List</a></li>
-            <li><a href="#unordered-list">Unordered List</a></li>
-            <li><a href="#nested-list">Nested list</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark</a></li>
-    <li><a href="#hyperlinked-image">Hyperlinked image</a></li>
   </ol>
 </nav>
         </div>
@@ -399,31 +366,15 @@
 
 
             <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/markdown-syntax-guide/">
-                <img src="/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu13459586684579990428.jpg"
-                        srcset="/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu13459586684579990428.jpg 800w, /p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu3425483315149503896.jpg 1600w"
-                        width="800" 
-                        height="534" 
-                        loading="lazy"
-                        alt="Featured image of post Markdown Syntax Guide" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/themes/" >
-                Themes
-            </a>
-        
-            <a href="/categories/syntax/" >
-                Syntax
+            <a href="/categories/jdk/" >
+                JDK
             </a>
         
     </header>
@@ -431,12 +382,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/markdown-syntax-guide/">Markdown Syntax Guide</a>
+            <a href="/p/jdk/">JDK</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+            如何下载配置JDK
         </h3>
         
     </div>
@@ -457,7 +408,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2019-03-11</time>
+                <time class="article-time--published">2024-11-28</time>
             </div>
         
 
@@ -472,7 +423,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -487,246 +438,263 @@
     <section class="article-content">
     
     
-    <p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
-<h2 id="headings">Headings
-</h2><p>The following HTML <code>&lt;h1&gt;</code>—<code>&lt;h6&gt;</code> elements represent six levels of section headings. <code>&lt;h1&gt;</code> is the highest section level while <code>&lt;h6&gt;</code> is the lowest.</p>
-<h1 id="h1">H1
-</h1><h2 id="h2">H2
-</h2><h3 id="h3">H3
-</h3><h4 id="h4">H4
-</h4><h5 id="h5">H5
-</h5><h6 id="h6">H6
-</h6><h2 id="paragraph">Paragraph
-</h2><p>Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.</p>
-<p>Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.</p>
-<h2 id="blockquotes">Blockquotes
-</h2><p>The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a <code>footer</code> or <code>cite</code> element, and optionally with in-line changes such as annotations and abbreviations.</p>
-<h4 id="blockquote-without-attribution">Blockquote without attribution
-</h4><blockquote>
-<p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-<strong>Note</strong> that you can use <em>Markdown syntax</em> within a blockquote.</p>
-</blockquote>
-<h4 id="blockquote-with-attribution">Blockquote with attribution
-</h4><blockquote>
-<p>Don&rsquo;t communicate by sharing memory, share memory by communicating.<br>
-— <cite>Rob Pike<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite></p>
-</blockquote>
-<h2 id="tables">Tables
-</h2><p>Tables aren&rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Age</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Bob</td>
-          <td>27</td>
-      </tr>
-      <tr>
-          <td>Alice</td>
-          <td>23</td>
-      </tr>
-  </tbody>
-</table></div>
-<h4 id="inline-markdown-within-tables">Inline Markdown within tables
-</h4><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Italics</th>
-          <th>Bold</th>
-          <th>Code</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><em>italics</em></td>
-          <td><strong>bold</strong></td>
-          <td><code>code</code></td>
-      </tr>
-  </tbody>
-</table></div>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>A</th>
-          <th>B</th>
-          <th>C</th>
-          <th>D</th>
-          <th>E</th>
-          <th>F</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-          <td>Phasellus ultricies, sapien non euismod aliquam, dui ligula tincidunt odio, at accumsan nulla sapien eget ex.</td>
-          <td>Proin eleifend dictum ipsum, non euismod ipsum pulvinar et. Vivamus sollicitudin, quam in pulvinar aliquam, metus elit pretium purus</td>
-          <td>Proin sit amet velit nec enim imperdiet vehicula.</td>
-          <td>Ut bibendum vestibulum quam, eu egestas turpis gravida nec</td>
-          <td>Sed scelerisque nec turpis vel viverra. Vivamus vitae pretium sapien</td>
-      </tr>
-  </tbody>
-</table></div>
-<h2 id="code-blocks">Code Blocks
-</h2><h4 id="code-block-with-backticks">Code block with backticks
-</h4><div class="highlight"><div class="chroma">
+    <p>安装 JDK（Java Development Kit）并配置环境变量是学习 Java 编程的第一步。以下是详细步骤，适用于 <strong>Windows</strong> 和 <strong>Mac/Linux</strong> 系统：</p>
+<h2 id="windows-系统"><strong>Windows 系统</strong>
+</h2><h3 id="1-下载-jdk"><strong>1. 下载 JDK</strong>
+</h3><ol>
+<li>前往 Oracle 官方网站或 OpenJDK 官网：
+<ul>
+<li>Oracle JDK：https://www.oracle.com/java/technologies/javase-downloads.html</li>
+<li>OpenJDK：https://openjdk.org/</li>
+</ul>
+</li>
+<li>下载适合你的系统（Windows x64）的 JDK 安装包。</li>
+</ol>
+<h3 id="2-安装-jdk"><strong>2. 安装 JDK</strong>
+</h3><ol>
+<li>双击下载的安装包，启动安装程序。</li>
+<li>按照提示进行安装：
+<ul>
+<li><strong>选择安装路径</strong>（例如 <code>C:\Program Files\Java\jdk-XX.X.X</code>）。</li>
+<li>安装完成后记住安装路径。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-配置环境变量"><strong>3. 配置环境变量</strong>
+</h3><ol>
+<li><strong>打开环境变量设置</strong>：
+<ul>
+<li>右键“此电脑”或“我的电脑”，选择“属性”。</li>
+<li>点击“高级系统设置”。</li>
+<li>在“系统属性”窗口中，选择“高级”选项卡，点击“环境变量”。</li>
+</ul>
+</li>
+<li><strong>设置 <code>JAVA_HOME</code></strong>：
+<ul>
+<li>点击“系统变量”下的“新建”按钮。</li>
+<li>变量名：<code>JAVA_HOME</code></li>
+<li>变量值：输入 JDK 的安装路径，例如 <code>C:\Program Files\Java\jdk-XX.X.X</code></li>
+</ul>
+</li>
+<li><strong>配置 <code>PATH</code> 变量</strong>：
+<ul>
+<li>在“系统变量”中找到 <code>Path</code>，点击“编辑”。</li>
+<li>新增一行，输入 <code>%JAVA_HOME%\bin</code></li>
+</ul>
+</li>
+<li><strong>配置 <code>CLASSPATH</code>（可选）</strong>：
+<ul>
+<li>点击“新建”变量。</li>
+<li>变量名：<code>CLASSPATH</code></li>
+<li>变量值：<code>.:%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar</code>
+（注意：路径分隔符 <code>;</code>）</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-验证安装"><strong>4. 验证安装</strong>
+</h3><ol>
+<li>打开命令提示符（<code>Win + R</code>，输入 <code>cmd</code>）。</li>
+<li>输入以下命令：
+<ul>
+<li>检查 Java 版本：<code>java -version</code></li>
+<li>检查编译器版本：<code>javac -version</code></li>
+</ul>
+</li>
+</ol>
+<p>如果显示 JDK 版本信息，说明安装和配置成功。</p>
+<h2 id="maclinux-系统"><strong>Mac/Linux 系统</strong>
+</h2><h3 id="1-使用包管理器安装-jdk推荐"><strong>1. 使用包管理器安装 JDK（推荐）</strong>
+</h3><h4 id="mac"><strong>Mac：</strong>
+</h4><ol>
+<li>
+<p>打开终端，运行以下命令：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install openjdk
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="code-block-indented-with-four-spaces">Code block indented with four spaces
-</h4><pre><code>&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;Example HTML5 Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;p&gt;Test&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="code-block-with-hugos-internal-highlight-shortcode">Code block with Hugo&rsquo;s internal highlight shortcode
-</h4><div class="highlight"><div class="chroma">
+</div></li>
+<li>
+<p>查看安装路径：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example HTML5 Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/usr/libexec/java_home
+</span></span></code></pre></td></tr></table>
 </div>
-</div>
-<h4 id="diff-code-block">Diff code block
-</h4><div class="highlight"><div class="chroma">
+</div></li>
+</ol>
+<h4 id="linux"><strong>Linux：</strong>
+</h4><ol>
+<li>
+<p>使用包管理器安装：</p>
+<ul>
+<li>
+<p>Ubuntu/Debian：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl">[dependencies.bevy]
-</span></span><span class="line"><span class="cl">git = &#34;https://github.com/bevyengine/bevy&#34;
-</span></span><span class="line"><span class="cl">rev = &#34;11f52b8c72fc3a568e8bb4a4cd1f3eb025ac2e13&#34;
-</span></span><span class="line"><span class="cl"><span class="gd">- features = [&#34;dynamic&#34;]
-</span></span></span><span class="line"><span class="cl"><span class="gd"></span><span class="gi">+ features = [&#34;jpeg&#34;, &#34;dynamic&#34;]
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install openjdk-XX-jdk
+</span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="list-types">List Types
-</h2><h4 id="ordered-list">Ordered List
-</h4><ol>
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
+</div></li>
+<li>
+<p>CentOS/RHEL：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo yum install java-XX-openjdk-devel
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>验证安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -version
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
-<h4 id="unordered-list">Unordered List
-</h4><ul>
-<li>List item</li>
-<li>Another item</li>
-<li>And another item</li>
-</ul>
-<h4 id="nested-list">Nested list
-</h4><ul>
-<li>Fruit
-<ul>
-<li>Apple</li>
-<li>Orange</li>
-<li>Banana</li>
-</ul>
-</li>
-<li>Dairy
-<ul>
-<li>Milk</li>
-<li>Cheese</li>
-</ul>
-</li>
-</ul>
-<h2 id="other-elements--abbr-sub-sup-kbd-mark">Other Elements — abbr, sub, sup, kbd, mark
-</h2><p><abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.</p>
-<p>H<sub>2</sub>O</p>
-<p>X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup></p>
-<p>Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.</p>
-<p>Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.</p>
-<h2 id="hyperlinked-image">Hyperlinked image
-</h2><p><a class="link" href="https://google.com"  target="_blank" rel="noopener"
-    ><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Google"
-	
-	
-></a></p>
-<div class="footnotes" role="doc-endnotes">
 <hr>
-<ol>
-<li id="fn:1">
-<p>The above quote is excerpted from Rob Pike&rsquo;s <a class="link" href="https://www.youtube.com/watch?v=PAAkCSZUG1c"  target="_blank" rel="noopener"
-    >talk</a> during Gopherfest, November 18, 2015.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<h3 id="2-手动下载与安装"><strong>2. 手动下载与安装</strong>
+</h3><ol>
+<li>
+<p>前往 Oracle 或 OpenJDK 网站，下载对应的 JDK 安装包（如 <code>.dmg</code>、<code>.tar.gz</code>）。</p>
+</li>
+<li>
+<p>解压（Linux）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -xvf jdk-XX.X.X.tar.gz
+</span></span><span class="line"><span class="cl">sudo mv jdk-XX.X.X /usr/lib/jvm
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<hr>
+<h3 id="3-配置环境变量-1"><strong>3. 配置环境变量</strong>
+</h3><h4 id="mac-1"><strong>Mac：</strong>
+</h4><ol>
+<li>
+<p>打开 <code>~/.zshrc</code> 或 <code>~/.bash_profile</code> 文件。</p>
+</li>
+<li>
+<p>添加以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>保存并刷新终端配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="linux-1"><strong>Linux：</strong>
+</h4><ol>
+<li>
+<p>编辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~/.bashrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">~/.bash_profile
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-XX.X.X
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>保存并生效：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<hr>
+<h3 id="4-验证安装-1"><strong>4. 验证安装</strong>
+</h3><ol>
+<li>
+<p>运行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">java -version
+</span></span><span class="line"><span class="cl">javac -version
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>如果能正确显示版本信息，说明安装成功。</p>
 </li>
 </ol>
-</div>
+
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/markdown/">Markdown</a>
-        
-            <a href="/tags/css/">Css</a>
-        
-            <a href="/tags/html/">Html</a>
-        
-            <a href="/tags/themes/">Themes</a>
-        
-    </section>
-
 
     </footer>
 
