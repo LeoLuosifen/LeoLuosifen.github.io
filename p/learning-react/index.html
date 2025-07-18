@@ -354,6 +354,7 @@
             <li><a href="#方式2使用nextjs">方式2：使用Next.js</a></li>
           </ol>
         </li>
+        <li><a href="#组件的导出和导入">组件的导出和导入</a></li>
       </ol>
     </li>
   </ol>
@@ -646,7 +647,74 @@
 </span></span><span class="line"><span class="cl">npm run dev
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="组件的导出和导入">组件的导出和导入
+</h3><ol>
+<li><strong>创建</strong>一个新的文件来存放组件的代码（React组件是常规的JavaScript函数，但是<strong>组件的名称必须以大写字母开头</strong>，否则它们将无法运行！）</li>
+<li><strong>导出</strong>该文件中的函数组件</li>
+<li>在需要使用该组件的文件中<strong>导入</strong>，以下为示例：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="cm">/* 定义Helloworld组件并导出 */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Helloworld</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* ... */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">Helloworld</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="cm">/* 引入Helloworld组件并使用 */</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Helloworld</span> <span class="nx">from</span> <span class="s1">&#39;./Helloworld.jsx&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Helloworld</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>语法</th>
+          <th>导出语句</th>
+          <th>导入语句</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>默认</td>
+          <td>export default function Hello() {}</td>
+          <td>import Hello from &lsquo;./Hello.js&rsquo;;</td>
+      </tr>
+      <tr>
+          <td>具名</td>
+          <td>export function Hello() {}</td>
+          <td>import { Hello } from &lsquo;./Hello.js&rsquo;;</td>
+      </tr>
+  </tbody>
+</table></div>
+
 </section>
 
 
