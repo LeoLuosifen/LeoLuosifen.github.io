@@ -13,9 +13,10 @@
         <pubDate>Fri, 18 Jul 2025 15:35:12 +1000</pubDate>
         
         <guid>https://LeoLuosifen.github.io/p/learning-react/</guid>
-        <description>&lt;h2 id=&#34;react&#34;&gt;React
+        <description>&lt;img src=&#34;React.png&#34; alt=&#34;React Logo&#34; width=&#34;400&#34;&gt;
+&lt;h2 id=&#34;react&#34;&gt;React
 &lt;/h2&gt;&lt;h3 id=&#34;初始react&#34;&gt;初始react
-&lt;/h3&gt;&lt;p&gt;React 是一个由 &lt;strong&gt;Facebook（现为 Meta）开发的 JavaScript 库&lt;/strong&gt;，用于构建用户界面（User Interfaces，简称 UI），特别是构建**单页应用（SPA）**中的前端界面。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;React 是一个由 &lt;strong&gt;Facebook（现为 Meta）开发的 JavaScript 库&lt;/strong&gt;，用于构建用户界面（User Interfaces，简称 UI），&lt;strong&gt;特别是构建单页应用（SPA）中的前端界面&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;-核心特点&#34;&gt;🌟 核心特点
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;组件化&lt;/strong&gt;：
