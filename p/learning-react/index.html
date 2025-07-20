@@ -381,6 +381,15 @@
         </li>
       </ol>
     </li>
+    <li><a href="#react的条件渲染">React的条件渲染</a>
+      <ol>
+        <li><a href="#选择性地返回null">选择性地返回null</a></li>
+        <li><a href="#if语句基础"><code>if</code>语句（基础）</a></li>
+        <li><a href="#三元表达式-常用于jsx中">三元表达式（? :）（常用于JSX中）</a></li>
+        <li><a href="#逻辑与运算符适合只在满足时显示">逻辑与<code>&amp;&amp;</code>运算符（适合只在满足时显示）</a></li>
+        <li><a href="#switch多分支较复杂时推荐不常用"><code>switch</code>多分支（较复杂时推荐，不常用）</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -449,7 +458,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 7 分钟
+                    阅读时长: 8 分钟
                 </time>
             </div>
         
@@ -972,6 +981,132 @@
 </span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;按钮被点击了！&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">Button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}</span> <span class="p">/&gt;;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="react的条件渲染">React的条件渲染
+</h2><p>在 <strong>React</strong> 中，“条件渲染”指的是根据条件决定<strong>是否渲染某个组件或元素</strong>，就像 JavaScript 中的条件语句一样。</p>
+<h3 id="选择性地返回null">选择性地返回null
+</h3><p>在一些情况下，你不想有任何东西进行渲染。比如，你不想显示已经打包好的物品。但一个组件必须返回一些东西。这种情况下，你可以直接返回 <code>null</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Hello</span><span class="p">({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">isFulled</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">isFulled</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="p">&lt;</span><span class="nt">li</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;item&#34;</span><span class="p">&gt;</span><span class="nx">Hello</span> <span class="o">-</span> <span class="p">{</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="if语句基础"><code>if</code>语句（基础）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Login</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">isLoggedIn</span> <span class="o">=</span> <span class="nx">props</span><span class="p">.</span><span class="nx">isLoggedIn</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">isLoggedIn</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">欢迎回来</span><span class="err">！</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">请先登录</span><span class="err">。</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="三元表达式-常用于jsx中">三元表达式（? :）（常用于JSX中）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Login</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">isLoggedIn</span> <span class="o">?</span> <span class="s1">&#39;欢迎回来！&#39;</span> <span class="o">:</span> <span class="s1">&#39;请先登录。&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果<code>isLoggedIn</code>为true时，则<code>( ? )</code>渲染<code>'欢迎回来'</code>,否则<code>( : )</code>渲染<code>'请先登录'</code>。</p>
+<h3 id="逻辑与运算符适合只在满足时显示">逻辑与<code>&amp;&amp;</code>运算符（适合只在满足时显示）
+</h3><p>另一个常见的快捷表达式是JavaScript 逻辑与（<code>&amp;&amp;</code>）运算符。在 React 组件里，通常用在当条件成立时，你想渲染一些 JSX，<strong>或者不做任何渲染</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Notification</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">消息中心</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">hasNewMessage</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">你有一条新消息</span><span class="err">！</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>‼️<span style="color:red">注意</span></strong></p>
+<p><strong>切勿将数字放在 <code>&amp;&amp;</code> 左侧.</strong></p>
+<p>JavaScript 会自动将左侧的值转换成布尔类型以判断条件成立与否。然而，如果左侧是 <code>0</code>，整个表达式将变成左侧的值（<code>0</code>），React 此时则会渲染 <code>0</code> 而不是不进行渲染。</p>
+<p>例如，一个常见的错误是 <code>messageCount &amp;&amp; &lt;p&gt;New messages&lt;/p&gt;</code>。其原本是想当 <code>messageCount</code> 为 0 的时候不进行渲染，但实际上却渲染了 <code>0</code>。</p>
+<p>为了更正，可以将左侧的值改成布尔类型：<code>messageCount &gt; 0 &amp;&amp; &lt;p&gt;New messages&lt;/p&gt;</code>。</p></blockquote>
+<h3 id="switch多分支较复杂时推荐不常用"><code>switch</code>多分支（较复杂时推荐，不常用）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Status</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;loading&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">加载中</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;success&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">加载成功</span><span class="err">！</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;error&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">加载失败</span><span class="err">。</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
