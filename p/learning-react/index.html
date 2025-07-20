@@ -390,6 +390,13 @@
         <li><a href="#switch多分支较复杂时推荐不常用"><code>switch</code>多分支（较复杂时推荐，不常用）</a></li>
       </ol>
     </li>
+    <li><a href="#react的列表渲染">React的列表渲染</a>
+      <ol>
+        <li><a href="#基本语法使用map渲染">基本语法：使用.map()渲染</a></li>
+        <li><a href="#渲染对象数组">渲染对象数组</a></li>
+        <li><a href="#渲染组件列表">渲染组件列表</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -458,7 +465,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 8 分钟
+                    阅读时长: 9 分钟
                 </time>
             </div>
         
@@ -1110,7 +1117,163 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="react的列表渲染">React的列表渲染
+</h2><p>在 <strong>React</strong> 中，渲染列表是指使用 <strong><code>Array.map()</code></strong> 方法动态生成多个组件或元素，通常用于展示一组数据（如任务列表、用户列表、文章等）。</p>
+<h3 id="基本语法使用map渲染">基本语法：使用.map()渲染
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">names</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">name</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">))}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p><strong>👨‍👩‍👦 输出结果：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl"><span class="gd">- Alice
+</span></span></span><span class="line"><span class="cl"><span class="gd">- Bob
+</span></span></span><span class="line"><span class="cl"><span class="gd">- Charlie
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>⁉️ 注意</strong></p>
+<p>浏览器中的<code>console</code>会输出一个警告</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">Warning: Each child in a list should have a unique “key” prop.
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<p>所以我们必须给数组中的每一项都指定一个key，它可以是字符串或者数字的形式，只要能唯一标识出各个数组项就行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="nx">names</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">name</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}&gt;{</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">))}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong><span style="color:lightblue; font-size:20px;">📋 注意</span></strong></p>
+<p>📌 直接放在 <code>map()</code> 方法里的 JSX 元素一般都需要指定 <code>key</code> 值！</p>
+<p>✅ 如果数据有唯一 ID，请优先用 <code>id</code>，不要随便用 <code>index</code>，避免排序或增删时出 bug。</p></blockquote>
+<h3 id="渲染对象数组">渲染对象数组
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">todos</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;吃饭&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;睡觉&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;写代码&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">TodoList</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">todos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">todo</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">todo</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;{</span><span class="nx">todo</span><span class="p">.</span><span class="nx">title</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">))}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="渲染组件列表">渲染组件列表
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">TodoItem</span><span class="p">({</span> <span class="nx">title</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">title</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">TodoList</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">todos</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;学习 React&#39;</span><span class="p">,</span> <span class="s1">&#39;敲代码&#39;</span><span class="p">,</span> <span class="s1">&#39;喝果汁&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">todos</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">todo</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span> <span class="na">title</span><span class="o">=</span><span class="p">{</span><span class="nx">todo</span><span class="p">}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">))}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>📂 小技巧：</strong></p>
+<ul>
+<li>可在<code>.map()</code>中组合条件渲染、事件绑定等。</li>
+<li>建议将<code>.map()</code>放在<code>JSX</code>内部，也可以先处理好数据再传入。</li>
+</ul>
+
 </section>
 
 
