@@ -404,6 +404,15 @@
         <li><a href="#输入框响应事件onchange">输入框响应事件（onChange）</a></li>
       </ol>
     </li>
+    <li><a href="#state组件的记忆">State：组件的记忆</a>
+      <ol>
+        <li><a href="#添加一个state变量">添加一个<code>state</code>变量</a></li>
+        <li><a href="#分析usestate">分析<code>useState</code></a></li>
+        <li><a href="#多个-state">多个 state：</a></li>
+        <li><a href="#state-是隔离且私有的">State 是隔离且私有的</a></li>
+        <li><a href="#如何让react记住">如何让React“记住”</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -472,7 +481,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 11 分钟
+                    阅读时长: 13 分钟
                 </time>
             </div>
         
@@ -1378,7 +1387,179 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="state组件的记忆">State：组件的记忆
+</h2><p>在 React 中，<strong><code>state</code> 就是组件的记忆</strong>。</p>
+<p>它让组件能够在用户交互后<strong>保存和更新数据</strong>，并根据这些数据自动重新渲染 UI。相比 <code>props</code>（父组件传入、只读），<code>state</code> 是<strong>组件自己维护的、可以改变的数据状态</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">  <span class="nx">functin</span> <span class="nx">handleClick</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">count</span> <span class="o">=</span> <span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">你点了</span> <span class="p">{</span><span class="nx">count</span><span class="p">}</span> <span class="nx">次</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}&gt;</span><span class="nx">点击我</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p><code>handleClick()</code> 事件处理函数正在更新局部变量 <code>count</code>。但存在两个原因使得变化不可见：</p>
+<ol>
+<li><strong>局部变量无法在多次渲染中持久保存。</strong> 当 React 再次渲染这个组件时，它会从头开始渲染——不会考虑之前对局部变量的任何更改。</li>
+<li><strong>更改局部变量不会触发渲染。</strong> React 没有意识到它需要使用新数据再次渲染组件。</li>
+</ol>
+<p>要使用新数据更新组件，需要做两件事：</p>
+<ol>
+<li><strong>保留</strong> 渲染之间的数据。</li>
+<li><strong>触发</strong> React 使用新数据渲染组件（重新渲染）。</li>
+</ol>
+<p><code>useState</code>Hook 提供了这两个功能：</p>
+<ol>
+<li><strong>State 变量</strong> 用于保存渲染间的数据。</li>
+<li><strong>State setter 函数</strong> 更新变量并触发 React 再次渲染组件。</li>
+</ol>
+<h3 id="添加一个state变量">添加一个<code>state</code>变量
+</h3><p>要添加 state 变量，先从文件顶部的 React 中导入 <code>useState</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后修改代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// 将let count = 0 进行替换
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>count</code>是一个<code>state</code>变量，<code>setIndex</code>是对应的 setter 函数.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl">这里的 [ 和 ] 语法称为数组解构，它允许你从数组中读取值。 useState 返回的数组总是正好有两项。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改后的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 声明 state
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">你点了</span> <span class="p">{</span><span class="nx">count</span><span class="p">}</span> <span class="nx">次</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">)}&gt;</span><span class="nx">点击我</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="分析usestate">分析<code>useState</code>
+</h3><p>当你调用<code>useState</code>时，相当于是在告诉 React 你想让这个组件记住一些东西，下面的例子是希望 React 记住 <code>count</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong><span style="color: lightblue; font-size=18px">🔎 注意</span></strong></p>
+<p>惯例是将这对返回值命名为 <code>const [thing, setThing]</code>。你也可以将其命名为任何你喜欢的名称，但遵照约定俗成能使跨项目合作更易理解。</p></blockquote>
+<p><code>useState</code> 的唯一参数是 state 变量的<strong>初始值</strong>。在这个例子中，<code>count</code> 的初始值被<code>useState(0)</code>设置为 <code>0</code>。</p>
+<p>每次你的组件渲染时，<code>useState</code> 都会给你一个包含两个值的数组：</p>
+<ol>
+<li><strong>state 变量</strong> (<code>count</code>) 会保存上次渲染的值。</li>
+<li><strong>state setter 函数</strong> (<code>setCount</code>) 可以更新 state 变量并触发 React 重新渲染组件。</li>
+</ol>
+<h3 id="多个-state">多个 state：
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">name</span><span class="p">,</span> <span class="nx">setName</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">age</span><span class="p">,</span> <span class="nx">setAge</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">18</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="state-是隔离且私有的">State 是隔离且私有的
+</h3><p>State 是屏幕上组件实例内部的状态。换句话说，<strong>如果你渲染同一个组件两次，每个副本都会有完全隔离的 state</strong>！改变其中一个不会影响另一个。</p>
+<h3 id="如何让react记住">如何让React“记住”
+</h3><p>每次组件被重新渲染时：</p>
+<ol>
+<li>React 会自动保存 <code>state</code> 的值；</li>
+<li>当你调用 <code>setXxx()</code> 改变值时，React 会：
+<ul>
+<li>更新这个状态</li>
+<li>自动<strong>重新渲染组件</strong></li>
+<li>保留你上一次的 <code>state</code></li>
+</ul>
+</li>
+</ol>
+<p>这就是 React 的<strong>记忆机制</strong>：只要组件还“活着”，它的 <code>state</code> 就不会丢失。</p>
+<blockquote>
+<p><strong><span style="color:red; font-size:18px">‼️ 陷阱</span></strong></p>
+<p><strong>Hooks ——以 <code>use</code> 开头的函数——只能在组件或<a class="link" href="https://zh-hans.react.dev/learn/reusing-logic-with-custom-hooks"  target="_blank" rel="noopener"
+    >自定义 Hook</a> 的最顶层调用。</strong> 你不能在条件语句、循环语句或其他嵌套函数内调用 Hook。Hook 是函数，但将它们视为关于组件需求的无条件声明会很有帮助。在组件顶部 “use” React 特性，类似于在文件顶部“导入”模块。</p></blockquote>
+
 </section>
 
 
